@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text } from 'react-native';
-import AppStoreBadge from "../dist/index.cjs";
+import { AppStoreBadge } from "react-native-store-badges";
 
 export default function App() {
   return (
