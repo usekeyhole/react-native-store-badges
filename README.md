@@ -15,7 +15,7 @@ const MyApp = () => {
   return (
     <StoreBadge
       platform="ios"
-      href="www.github.com" // optional
+      href="https://www.github.com" // optional
       height={60} // optional
       locale="da-DK" // optional
     />
