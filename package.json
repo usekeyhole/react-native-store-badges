@@ -4,7 +4,6 @@
   "description": "A React Native library for rendering App Store and Google Play Store badges.",
   "type": "module",
   "scripts": {
-    "build": "tsup src/index.tsx --format cjs --dts-resolve --minify --clean --sourcemap --out-dir dist",
     "prepack": "bob build"
   },
   "keywords": [
@@ -35,7 +34,6 @@
     "react-native": "^0.72.4",
     "react-native-builder-bob": "^0.21.3",
     "react-native-web": "^0.19.8",
-    "tsup": "^7.2.0",
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
@@ -70,6 +68,7 @@
     "lib/"
   ],
   "dependencies": {
-    "react-native-svg": "^13.13.0"
+    "react-native-svg": "^13.13.0",
+    "react-svg": "^16.1.22"
   }
 }

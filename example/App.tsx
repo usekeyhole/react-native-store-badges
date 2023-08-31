@@ -1,22 +1,49 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, Text } from 'react-native';
-import { AppStoreBadge } from "react-native-store-badges";
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, View, Text, SafeAreaView } from "react-native";
+import { StoreBadge } from "react-native-store-badges";
 
 export default function App() {
+  const badgeHeight = 60;
+  const locale = "da-DK";
+
   return (
-    <View style={styles.container}>
-      <Text>My Example App</Text>
-      <AppStoreBadge />
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={styles.container}>
+        <Text style={styles.title}>My Example App</Text>
+        <View style={styles.badgesContainer}>
+          <StoreBadge
+            platform="ios"
+            href="https://github.com/usekeyhole/react-native-store-badges"
+            height={badgeHeight}
+            locale={locale}
+          />
+          <StoreBadge
+            platform="android"
+            href="https://github.com/usekeyhole/react-native-store-badges"
+            height={badgeHeight}
+            locale={locale}
+          />
+        </View>
+        <StatusBar style="auto" />
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 60,
+  },
+  title: {
+    fontSize: 42,
+    fontWeight: "bold",
+  },
+  badgesContainer: {
+    display: "flex",
+    flexDirection: "row",
+    gap: 8,
   },
 });
