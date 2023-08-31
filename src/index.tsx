@@ -1,4 +1,4 @@
-import { Linking, Pressable, ViewStyle } from "react-native";
+import { Linking, TouchableOpacity, ViewStyle } from "react-native";
 import { Image } from "./Image";
 
 export type Platform = "ios" | "android";
@@ -23,7 +23,7 @@ export const StoreBadge = ({
   const width = getWidth(platform, height);
 
   return (
-    <Pressable
+    <TouchableOpacity
       disabled={!href}
       onPress={() => {
         if (!href) return;
@@ -45,7 +45,7 @@ export const StoreBadge = ({
         width={width}
         height={height}
       />
-    </Pressable>
+    </TouchableOpacity>
   );
 };
 
