@@ -1,15 +1,16 @@
-import React from "react";
-import { Linking, TouchableOpacity, ViewStyle } from "react-native";
+import React, { HTMLAttributeAnchorTarget } from "react";
+import { Linking, Platform, TouchableOpacity, ViewStyle } from "react-native";
 import { Image } from "./Image";
 
-export type Platform = "ios" | "android";
+export type PlatformType = "ios" | "android";
 
 export interface StoreBadgeProps {
-  platform: Platform;
+  platform: PlatformType;
   height?: number;
-  href?: string;
   locale?: string;
+  href?: string;
   style?: ViewStyle;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 export const StoreBadge = ({
@@ -17,18 +18,22 @@ export const StoreBadge = ({
   locale: localeProp,
   height = 40,
   href,
+  target,
   style,
 }: StoreBadgeProps) => {
   const locale = getLocale(localeProp);
   const uri = getUri(platform, locale);
   const width = getWidth(platform, height);
+  const isWeb = Platform.OS === "web";
 
   return (
     <TouchableOpacity
       disabled={!href}
       onPress={() => {
         if (!href) return;
-        Linking.openURL(href);
+
+        if (isWeb) window.open(href, target);
+        else Linking.openURL(href);
       }}
       style={[
         {
@@ -52,7 +57,7 @@ export const StoreBadge = ({
 
 const PLAY_STORE_WIDTH_RATIO = 3.3;
 const APP_STORE_WIDTH_RATIO = 2.99;
-const getWidth = (platform: Platform, height: number) => {
+const getWidth = (platform: PlatformType, height: number) => {
   return platform === "ios"
     ? height * APP_STORE_WIDTH_RATIO
     : height * PLAY_STORE_WIDTH_RATIO;
@@ -88,7 +93,7 @@ const getLocale = (localeArg?: string): Locale => {
   }
 };
 
-const getUri = (platform: Platform, locale: Locale) => {
+const getUri = (platform: PlatformType, locale: Locale) => {
   const localeStr = `${locale.language}-${locale.country}`;
 
   const uri =
