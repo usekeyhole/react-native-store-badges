@@ -1,3 +1,4 @@
+import React from "react";
 import { Linking, TouchableOpacity, ViewStyle } from "react-native";
 import { Image } from "./Image";
 

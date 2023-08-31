@@ -1,3 +1,4 @@
+import React from "react";
 import { SvgProps } from ".";
 import { ReactSVG } from "react-svg";
 

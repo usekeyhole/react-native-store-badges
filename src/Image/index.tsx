@@ -1,3 +1,4 @@
+import React from "react";
 import { SvgLoader } from "../SvgLoader";
 import { Image as RNImage, ImageSourcePropType } from "react-native";
 
