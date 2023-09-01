@@ -24,6 +24,20 @@ export default function App() {
             locale={locale}
           />
         </View>
+        <View style={styles.badgesContainer}>
+          <StoreBadge
+            platform="ios"
+            href="https://github.com/usekeyhole/react-native-store-badges"
+            height={badgeHeight}
+            locale={"en-US"}
+          />
+          <StoreBadge
+            platform="android"
+            href="https://github.com/usekeyhole/react-native-store-badges"
+            height={badgeHeight}
+            locale={"en-US"}
+          />
+        </View>
         <StatusBar style="auto" />
       </View>
     </SafeAreaView>
@@ -35,7 +49,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    gap: 60,
+    gap: 20,
   },
   title: {
     fontSize: 42,
@@ -44,6 +58,5 @@ const styles = StyleSheet.create({
   badgesContainer: {
     display: "flex",
     flexDirection: "row",
-    gap: 8,
   },
 });
