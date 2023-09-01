@@ -1,14 +1,20 @@
 import React from "react";
-import { SvgLoader } from "../SvgLoader";
-import { Image as RNImage, ImageSourcePropType } from "react-native";
+import { Svg } from "../Svg";
+import {
+  Image as RNImage,
+  ImageSourcePropType,
+  StyleProp,
+  ImageStyle,
+} from "react-native";
 
 export interface ImageProps {
   source: ImageSourcePropType;
   height: number;
   width: number;
+  style?: StyleProp<ImageStyle>;
 }
 
-export const Image = ({ source, height, width }: ImageProps) => {
+export const Image = ({ source, height, width, style }: ImageProps) => {
   if (Array.isArray(source)) {
     return (
       <>
@@ -24,7 +30,7 @@ export const Image = ({ source, height, width }: ImageProps) => {
   }
 
   if (source.uri?.endsWith(".svg")) {
-    return <SvgLoader uri={source.uri} height={height} />;
+    return <Svg uri={source.uri} height={height} width={width} />;
   }
 
   return (
@@ -34,6 +40,7 @@ export const Image = ({ source, height, width }: ImageProps) => {
         height,
         width,
       }}
+      style={style}
     />
   );
 };

@@ -1,19 +1,26 @@
 import React from "react";
-import { SvgProps } from ".";
 import { ReactSVG } from "react-svg";
 
-export const Svg = ({ uri, height }: SvgProps) => {
+export const Svg = ({
+  uri,
+  height,
+  width,
+}: {
+  uri: string;
+  height: number;
+  width: number;
+}) => {
   return (
     <ReactSVG
       src={uri}
       style={{
         height,
+        width,
       }}
       afterInjection={(svg) => {
-        svg.removeAttribute("width");
+        svg.setAttribute("width", `${width}px`);
         svg.setAttribute("height", `${height}px`);
       }}
-      wrapper="svg"
     />
   );
 };

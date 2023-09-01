@@ -1,8 +1,14 @@
 import React, { HTMLAttributeAnchorTarget } from "react";
-import { Linking, Platform, TouchableOpacity, ViewStyle } from "react-native";
-import { Image } from "./Image";
+import { View, ViewStyle } from "react-native";
+import { Image } from "./components/Image";
+import { Link } from "./components/Link";
 
 export type PlatformType = "ios" | "android";
+
+export type Locale = {
+  language: string;
+  country: string;
+};
 
 export interface StoreBadgeProps {
   platform: PlatformType;
@@ -18,41 +24,52 @@ export const StoreBadge = ({
   locale: localeProp,
   height = 40,
   href,
-  target,
+  target = "_blank",
   style,
 }: StoreBadgeProps) => {
   const locale = getLocale(localeProp);
-  const uri = getUri(platform, locale);
-  const width = getWidth(platform, height);
-  const isWeb = Platform.OS === "web";
 
   return (
-    <TouchableOpacity
-      disabled={!href}
-      onPress={() => {
-        if (!href) return;
-
-        if (isWeb) window.open(href, target);
-        else Linking.openURL(href);
-      }}
+    <View
       style={[
         {
-          height,
-          width,
-          margin: height / 4,
+          padding: height / 4,
         },
         style,
       ]}
     >
-      <Image
-        source={{
-          uri,
-        }}
-        width={width}
-        height={height}
-      />
-    </TouchableOpacity>
+      <Link href={href} target={target}>
+        <Image
+          source={{
+            uri: getUri(platform, locale),
+          }}
+          width={getWidth(platform, height)}
+          height={height}
+          style={{
+            overflow: "hidden",
+            transform: getScales(platform, locale),
+          }}
+        />
+      </Link>
+    </View>
   );
+};
+
+const LANGUAGE_SCALES: {
+  [key in PlatformType]: {
+    [key: string]: {
+      x: number;
+      y: number;
+    };
+  };
+} = {
+  android: {
+    en: {
+      x: 1.15,
+      y: 1.15,
+    },
+  },
+  ios: {},
 };
 
 const PLAY_STORE_WIDTH_RATIO = 3.3;
@@ -61,11 +78,6 @@ const getWidth = (platform: PlatformType, height: number) => {
   return platform === "ios"
     ? height * APP_STORE_WIDTH_RATIO
     : height * PLAY_STORE_WIDTH_RATIO;
-};
-
-type Locale = {
-  language: string;
-  country: string;
 };
 
 const getLocale = (localeArg?: string): Locale => {
@@ -91,6 +103,12 @@ const getLocale = (localeArg?: string): Locale => {
         country: "US",
       };
   }
+};
+
+const getScales = (platform: PlatformType, locale: Locale) => {
+  const scaleX = LANGUAGE_SCALES[platform][locale.language]?.x || 1;
+  const scaleY = LANGUAGE_SCALES[platform][locale.language]?.y || 1;
+  return `scaleX(${scaleX}) scaleY(${scaleY})`;
 };
 
 const getUri = (platform: PlatformType, locale: Locale) => {
