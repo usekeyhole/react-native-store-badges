@@ -36,6 +36,18 @@ const MyApp = () => {
 
 ### Localization
 
+> **Note**
+> Some locales might have different sized badges. The library attempts to handle this problem, so please create an issue or pull request, if you are experiencing this problem.
+
+[App Store Locales List](https://www.apple.com/itunes/marketing-on-itunes/identity-guidelines.html#itunes-store-badges#localized-lockups)
+
+[Play Store Locales List](https://play.google.com/intl/en-US/badges/#!#locale)
+
 ### Badge Guidelines
 
-## Known Issues
+> **Warning**
+> Be aware of the badge guidelines when using this library.
+
+[App Store Badge Guidelines](https://developer.apple.com/app-store/marketing/guidelines/)
+
+[Play Store Badge Guidelines](https://play.google.com/intl/en_us/badges/)
