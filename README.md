@@ -1,4 +1,5 @@
 # react-native-store-badges
+
 <div align="center">
       <img src="https://raw.githubusercontent.com/usekeyhole/react-native-store-badges/master/img/repo-header.png" alt="React Native Store Badges" />
 </div>
@@ -41,7 +42,7 @@ const MyApp = () => {
 ### Localization
 
 > **Note**
-> Some locales might have different sized badges. The library attempts to handle this problem, so please create an issue or pull request, if you are experiencing this problem.
+> Some locales might have different sized badges. The library attempts to handle this problem, so please create an issue or pull request, if you are experiencing this problem. To temporarily solve this problem you can provide custom scales using the `customScale` prop.
 
 [App Store Locales List](https://www.apple.com/itunes/marketing-on-itunes/identity-guidelines.html#itunes-store-badges#localized-lockups)
 
