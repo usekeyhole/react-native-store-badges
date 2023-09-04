@@ -5,6 +5,11 @@ import { Link } from "./components/Link";
 
 export type PlatformType = "ios" | "android";
 
+export type BadgeScale = {
+  x?: number;
+  y?: number;
+};
+
 export type Locale = {
   language: string;
   country: string;
@@ -17,6 +22,7 @@ export interface StoreBadgeProps {
   href?: string;
   style?: ViewStyle;
   target?: HTMLAttributeAnchorTarget;
+  customScale?: BadgeScale;
 }
 
 export const StoreBadge = ({
@@ -26,6 +32,7 @@ export const StoreBadge = ({
   href,
   target = "_blank",
   style,
+  customScale,
 }: StoreBadgeProps) => {
   const locale = getLocale(localeProp);
 
@@ -47,7 +54,7 @@ export const StoreBadge = ({
           height={height}
           style={{
             overflow: "hidden",
-            transform: getScales(platform, locale),
+            transform: getScales(platform, locale, customScale),
           }}
         />
       </Link>
@@ -105,9 +112,16 @@ const getLocale = (localeArg?: string): Locale => {
   }
 };
 
-const getScales = (platform: PlatformType, locale: Locale) => {
-  const scaleX = LANGUAGE_SCALES[platform][locale.language]?.x || 1;
-  const scaleY = LANGUAGE_SCALES[platform][locale.language]?.y || 1;
+const getScales = (
+  platform: PlatformType,
+  locale: Locale,
+  customScale?: BadgeScale,
+) => {
+  const scaleX =
+    customScale?.x || LANGUAGE_SCALES[platform][locale.language]?.x || 1;
+
+  const scaleY =
+    customScale?.y || LANGUAGE_SCALES[platform][locale.language]?.y || 1;
 
   return Platform.OS === "web"
     ? `scaleX(${scaleX}) scaleY(${scaleY})`

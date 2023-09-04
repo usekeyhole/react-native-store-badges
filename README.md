@@ -25,14 +25,15 @@ const MyApp = () => {
 
 ### Props
 
-| Name         |                  Type                   |              Default              | Description                                                             |
-| :----------- | :-------------------------------------: | :-------------------------------: | :---------------------------------------------------------------------- |
-| **platform** |   <code>"ios" &#124; "android"</code>   |            `required`             | App Store or Play Store badge                                           |
-| **locale**   |          <code>string?</code>           | `navigator.language` or `"en-US"` | Locale code                                                             |
-| **height**   |          <code>number?</code>           |               `40`                | Height of the badge <i>(width is calculated)</i>                        |
-| **href**     |          <code>string?</code>           |                                   | URL of App Store or Play Store                                          |
-| **target**   | <code>HTMLAttributeAnchorTarget?</code> |            `"_blank"`             | `target`-attribute is only used on Web platforms                        |
-| **style**    |         <code>ViewStyle?</code>         |               `135`               | Styles for the wrapping Pressable <i>(Be aware of badge guidelines)</i> |
+| Name            |                  Type                   |              Default              | Description                                                                                                             |
+| :-------------- | :-------------------------------------: | :-------------------------------: | :---------------------------------------------------------------------------------------------------------------------- |
+| **platform**    |   <code>"ios" &#124; "android"</code>   |            `required`             | App Store or Play Store badge                                                                                           |
+| **locale**      |          <code>string?</code>           | `navigator.language` or `"en-US"` | Locale code                                                                                                             |
+| **height**      |          <code>number?</code>           |               `40`                | Height of the badge <i>(width is calculated)</i>                                                                        |
+| **href**        |          <code>string?</code>           |                                   | URL of App Store or Play Store                                                                                          |
+| **target**      | <code>HTMLAttributeAnchorTarget?</code> |            `"_blank"`             | `target`-attribute is only used on Web platforms                                                                        |
+| **style**       |         <code>ViewStyle?</code>         |               `135`               | Styles for the wrapping Pressable <i>(Be aware of badge guidelines)</i>                                                 |
+| **customScale** |        <code>BadgeScale?</code>         |                                   | Use to temporarily correct any issues there may be with badge sizing in a specific locale. ([Read more](#localization)) |
 
 ### Localization
 
@@ -51,3 +52,7 @@ const MyApp = () => {
 [App Store Badge Guidelines](https://developer.apple.com/app-store/marketing/guidelines/)
 
 [Play Store Badge Guidelines](https://play.google.com/intl/en_us/badges/)
+
+### Examples
+
+[Expo Snack](https://snack.expo.dev/@reinhardt/react-native-store-badges)
