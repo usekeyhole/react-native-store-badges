@@ -1,7 +1,6 @@
-# react-native-store-badges
-
 <div align="center">
-      <img src="https://raw.githubusercontent.com/usekeyhole/react-native-store-badges/master/img/repo-header.png" alt="React Native Store Badges" />
+    <h1 style="margin-bottom: 0px; padding-bottom: 0px;">react-native-store-badges</h1>
+    <img src="https://raw.githubusercontent.com/usekeyhole/react-native-store-badges/master/img/repo-header.png" alt="React Native Store Badges" />
 </div>
 
 ## Getting Started
