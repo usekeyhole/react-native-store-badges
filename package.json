@@ -2,7 +2,6 @@
   "name": "react-native-store-badges",
   "version": "0.9.0",
   "description": "A React Native library for rendering App Store and Google Play Store badges.",
-  "type": "module",
   "scripts": {
     "prepack": "bob build"
   },
