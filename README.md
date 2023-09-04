@@ -59,3 +59,7 @@ const MyApp = () => {
 ### Examples
 
 [Expo Snack](https://snack.expo.dev/@reinhardt/react-native-store-badges)
+
+## Known Issues
+
+- The App Store Badge will only load the "en-US" locale on a https connection.
