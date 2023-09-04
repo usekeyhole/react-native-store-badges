@@ -10,5 +10,5 @@ export const Svg = ({
   height: number;
   width: number;
 }) => {
-  return <SvgFromUri uri={uri} height={height} width={width} />;
+  return <SvgFromUri uri={uri} height={height} width={width} fill="black" />;
 };
