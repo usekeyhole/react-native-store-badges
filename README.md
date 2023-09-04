@@ -35,7 +35,7 @@ const MyApp = () => {
 | **height**      |          <code>number?</code>           |               `40`                | Height of the badge <i>(width is calculated)</i>                                                                        |
 | **href**        |          <code>string?</code>           |                                   | URL of App Store or Play Store                                                                                          |
 | **target**      | <code>HTMLAttributeAnchorTarget?</code> |            `"_blank"`             | `target`-attribute is only used on Web platforms                                                                        |
-| **style**       |         <code>ViewStyle?</code>         |               `135`               | Styles for the wrapping Pressable <i>(Be aware of badge guidelines)</i>                                                 |
+| **style**       |         <code>ViewStyle?</code>         |               `135`               | Styles for the wrapping View <i>(Be aware of badge guidelines)</i>                                                      |
 | **customScale** |        <code>BadgeScale?</code>         |                                   | Use to temporarily correct any issues there may be with badge sizing in a specific locale. ([Read more](#localization)) |
 
 ### Localization
