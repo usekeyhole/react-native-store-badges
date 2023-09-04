@@ -1,6 +1,6 @@
 <div align="center">
     <h1>react-native-store-badges</h1>
-    <img src="https://raw.githubusercontent.com/usekeyhole/react-native-store-badges/master/img/repo-header.png" alt="React Native Store Badges" style="margin-bottom: 8px;" />
+    <img src="https://raw.githubusercontent.com/usekeyhole/react-native-store-badges/master/img/repo-header.png" alt="React Native Store Badges" />
 
   <a href="https://www.npmjs.com/package/react-native-store-badges" target="\_parent">
     <img alt="" src="https://img.shields.io/npm/dm/react-native-store-badges.svg" />
@@ -14,6 +14,16 @@
 
   <img alt="" src="https://img.shields.io/github/stars/usekeyhole/react-native-store-badges.svg?style=social&label=Star" />
 
+  <br />
+  <br />
+
+  <p>Your one stop solution for official, same-sized, localized and multiplatform store badges in React Native.</p>
+
+  <a href="https://snack.expo.dev/@reinhardt/react-native-store-badges" target="_blank">
+    <b>Expo Snack Example</b>
+  </a>
+
+  <br />
 </div>
 
 ## Getting Started
@@ -68,10 +78,6 @@ const MyApp = () => {
 [App Store Badge Guidelines](https://developer.apple.com/app-store/marketing/guidelines/)
 
 [Play Store Badge Guidelines](https://play.google.com/intl/en_us/badges/)
-
-### Examples
-
-[Expo Snack](https://snack.expo.dev/@reinhardt/react-native-store-badges)
 
 ## Known Issues
 
