@@ -1,5 +1,5 @@
 import React, { HTMLAttributeAnchorTarget } from "react";
-import { View, ViewStyle } from "react-native";
+import { Platform, View, ViewStyle } from "react-native";
 import { Image } from "./components/Image";
 import { Link } from "./components/Link";
 
@@ -108,7 +108,17 @@ const getLocale = (localeArg?: string): Locale => {
 const getScales = (platform: PlatformType, locale: Locale) => {
   const scaleX = LANGUAGE_SCALES[platform][locale.language]?.x || 1;
   const scaleY = LANGUAGE_SCALES[platform][locale.language]?.y || 1;
-  return `scaleX(${scaleX}) scaleY(${scaleY})`;
+
+  return Platform.OS === "web"
+    ? `scaleX(${scaleX}) scaleY(${scaleY})`
+    : [
+        {
+          scaleX,
+        },
+        {
+          scaleY,
+        },
+      ];
 };
 
 const getUri = (platform: PlatformType, locale: Locale) => {

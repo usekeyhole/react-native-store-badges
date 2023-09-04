@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, SafeAreaView } from "react-native";
 import { StoreBadge } from "react-native-store-badges";
 
 export default function App() {
-  const badgeHeight = 60;
+  const badgeHeight = 50;
   const locale = "da-DK";
 
   return (
@@ -22,20 +22,6 @@ export default function App() {
             href="https://github.com/usekeyhole/react-native-store-badges"
             height={badgeHeight}
             locale={locale}
-          />
-        </View>
-        <View style={styles.badgesContainer}>
-          <StoreBadge
-            platform="ios"
-            href="https://github.com/usekeyhole/react-native-store-badges"
-            height={badgeHeight}
-            locale={"en-US"}
-          />
-          <StoreBadge
-            platform="android"
-            href="https://github.com/usekeyhole/react-native-store-badges"
-            height={badgeHeight}
-            locale={"en-US"}
           />
         </View>
         <StatusBar style="auto" />
