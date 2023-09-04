@@ -2,6 +2,9 @@
     <h1>react-native-store-badges</h1>
     <img src="https://raw.githubusercontent.com/usekeyhole/react-native-store-badges/master/img/repo-header.png" alt="React Native Store Badges" />
 
+  </br>
+  </hr>
+
   <a href="https://www.npmjs.com/package/react-native-store-badges" target="\_parent">
     <img alt="" src="https://img.shields.io/npm/dm/react-native-store-badges.svg" />
   </a>
