@@ -1,6 +1,19 @@
 <div align="center">
     <h1>react-native-store-badges</h1>
     <img src="https://raw.githubusercontent.com/usekeyhole/react-native-store-badges/master/img/repo-header.png" alt="React Native Store Badges" />
+
+  <a href="https://www.npmjs.com/package/react-native-store-badges" target="\_parent">
+    <img alt="" src="https://img.shields.io/npm/dm/react-native-store-badges.svg" />
+  </a>
+
+  <img alt="semantic-release" src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg">
+
+  <img src="https://img.shields.io/badge/license-MIT%20-blue" />
+
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" />
+
+  <img alt="" src="https://img.shields.io/github/stars/usekeyhole/react-native-store-badges.svg?style=social&label=Star" />
+
 </div>
 
 ## Getting Started
