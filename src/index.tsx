@@ -18,7 +18,7 @@ export type Locale = {
 export interface StoreBadgeProps {
   platform: PlatformType;
   height?: number;
-  locale?: string;
+  locale?: LocaleISO | (string & {});
   href?: string;
   style?: ViewStyle;
   target?: HTMLAttributeAnchorTarget;
@@ -145,3 +145,37 @@ const getUri = (platform: PlatformType, locale: Locale) => {
 
   return uri;
 };
+export type LocaleISO =
+  | "id-ID"
+  | "ms-MY"
+  | "cs-CZ"
+  | "da-DK"
+  | "de-DE"
+  | "et-EE"
+  | "en-US"
+  | "es-ES"
+  | "fr-FR"
+  | "it-IT"
+  | "lv-LV"
+  | "lt-LT"
+  | "hu-HU"
+  | "nl-NL"
+  | "no-NO"
+  | "nb-NO"
+  | "nn-NO"
+  | "pl-PL"
+  | "pt-PT"
+  | "pt-BR"
+  | "ru-RU"
+  | "ro-RO"
+  | "sk-SK"
+  | "sl-SI"
+  | "fi-FI"
+  | "sv-SE"
+  | "vi-VN"
+  | "tr-TR"
+  | "el-GR"
+  | "bg-BG"
+  | "th-TH"
+  | "ko-KR"
+  | "ja-JP";
