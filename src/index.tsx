@@ -92,7 +92,10 @@ const getLocale = (localeArg?: string): Locale => {
   const [language, country] = locale.split("-");
 
   switch (language) {
-    case "no" || "nb" || "nn":
+    case "no":
+    case "nb":
+    case "nn":
+      console.log(language);
       return {
         language: "no",
         country: "NO",
@@ -145,6 +148,7 @@ const getUri = (platform: PlatformType, locale: Locale) => {
 
   return uri;
 };
+
 export type LocaleISO =
   | "id-ID"
   | "ms-MY"
