@@ -95,7 +95,6 @@ const getLocale = (localeArg?: string): Locale => {
     case "no":
     case "nb":
     case "nn":
-      console.log(language);
       return {
         language: "no",
         country: "NO",
@@ -139,11 +138,9 @@ const getScales = (
 };
 
 const getUri = (platform: PlatformType, locale: Locale) => {
-  const localeStr = `${locale.language}-${locale.country}`;
-
   const uri =
     platform === "ios"
-      ? `https://apple-resources.s3.amazonaws.com/media-badges/download-on-the-app-store/black/${localeStr.toLowerCase()}.svg`
+      ? `https://github.com/usekeyhole/react-native-store-badges/blob/main/img/app-store/${locale.country.toLowerCase()}.png`
       : `https://play.google.com/intl/en-US/badges/static/images/badges/${locale.language}_badge_web_generic.png`;
 
   return uri;
