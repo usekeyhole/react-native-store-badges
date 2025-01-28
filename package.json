@@ -1,6 +1,6 @@
 {
   "name": "react-native-store-badges",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A React Native library for rendering App Store and Google Play Store badges.",
   "scripts": {
     "prepack": "bob build"
