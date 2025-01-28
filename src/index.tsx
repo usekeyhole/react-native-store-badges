@@ -119,11 +119,16 @@ const getScales = (
   locale: Locale,
   customScale?: BadgeScale,
 ) => {
-  const scaleX =
+  let scaleX =
     customScale?.x || LANGUAGE_SCALES[platform][locale.language]?.x || 1;
 
-  const scaleY =
+  let scaleY =
     customScale?.y || LANGUAGE_SCALES[platform][locale.language]?.y || 1;
+
+  if (platform === "ios") {
+    scaleX += 0.1;
+    scaleY += 0.1;
+  }
 
   return Platform.OS === "web"
     ? `scaleX(${scaleX}) scaleY(${scaleY})`
@@ -140,7 +145,7 @@ const getScales = (
 const getUri = (platform: PlatformType, locale: Locale) => {
   const uri =
     platform === "ios"
-      ? `https://github.com/usekeyhole/react-native-store-badges/blob/main/img/app-store/${locale.country.toLowerCase()}.png`
+      ? `https://raw.githubusercontent.com/usekeyhole/react-native-store-badges/refs/heads/feature/host-app-store/img/app-store/${locale.country.toLowerCase()}.svg`
       : `https://play.google.com/intl/en-US/badges/static/images/badges/${locale.language}_badge_web_generic.png`;
 
   return uri;
