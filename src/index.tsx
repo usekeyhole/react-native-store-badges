@@ -18,7 +18,7 @@ export type Locale = {
 export interface StoreBadgeProps {
   platform: PlatformType;
   height?: number;
-  locale?: string;
+  locale?: LocaleISO | (string & {});
   href?: string;
   style?: ViewStyle;
   target?: HTMLAttributeAnchorTarget;
@@ -92,7 +92,9 @@ const getLocale = (localeArg?: string): Locale => {
   const [language, country] = locale.split("-");
 
   switch (language) {
-    case "no" || "nb" || "nn":
+    case "no":
+    case "nb":
+    case "nn":
       return {
         language: "no",
         country: "NO",
@@ -117,11 +119,16 @@ const getScales = (
   locale: Locale,
   customScale?: BadgeScale,
 ) => {
-  const scaleX =
+  let scaleX =
     customScale?.x || LANGUAGE_SCALES[platform][locale.language]?.x || 1;
 
-  const scaleY =
+  let scaleY =
     customScale?.y || LANGUAGE_SCALES[platform][locale.language]?.y || 1;
+
+  if (platform === "ios") {
+    scaleX += 0.1;
+    scaleY += 0.1;
+  }
 
   return Platform.OS === "web"
     ? `scaleX(${scaleX}) scaleY(${scaleY})`
@@ -136,12 +143,45 @@ const getScales = (
 };
 
 const getUri = (platform: PlatformType, locale: Locale) => {
-  const localeStr = `${locale.language}-${locale.country}`;
-
   const uri =
     platform === "ios"
-      ? `https://apple-resources.s3.amazonaws.com/media-badges/download-on-the-app-store/black/${localeStr.toLowerCase()}.svg`
+      ? `https://raw.githubusercontent.com/usekeyhole/react-native-store-badges/refs/heads/feature/host-app-store/img/app-store/${locale.country.toLowerCase()}.svg`
       : `https://play.google.com/intl/en-US/badges/static/images/badges/${locale.language}_badge_web_generic.png`;
 
   return uri;
 };
+
+export type LocaleISO =
+  | "id-ID"
+  | "ms-MY"
+  | "cs-CZ"
+  | "da-DK"
+  | "de-DE"
+  | "et-EE"
+  | "en-US"
+  | "es-ES"
+  | "fr-FR"
+  | "it-IT"
+  | "lv-LV"
+  | "lt-LT"
+  | "hu-HU"
+  | "nl-NL"
+  | "no-NO"
+  | "nb-NO"
+  | "nn-NO"
+  | "pl-PL"
+  | "pt-PT"
+  | "pt-BR"
+  | "ru-RU"
+  | "ro-RO"
+  | "sk-SK"
+  | "sl-SI"
+  | "fi-FI"
+  | "sv-SE"
+  | "vi-VN"
+  | "tr-TR"
+  | "el-GR"
+  | "bg-BG"
+  | "th-TH"
+  | "ko-KR"
+  | "ja-JP";

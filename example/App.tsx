@@ -4,7 +4,7 @@ import { StoreBadge } from "react-native-store-badges";
 
 export default function App() {
   const badgeHeight = 50;
-  const locale = "da-DK";
+  const locale = "en_US";
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
