@@ -6,7 +6,7 @@
       "dom",
       "esnext"
     ],
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "jsx": "react-native",
     "esModuleInterop": true,
     "resolveJsonModule": true,
@@ -21,13 +21,14 @@
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "noStrictGenericChecks": false,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "rootDir": "./src"
   },
   "include": [
     "src"
   ],
   "exclude": [
-    "node_modules"
-  ],
-  "extends": "expo/tsconfig.base"
+    "node_modules",
+    "example"
+  ]
 }
