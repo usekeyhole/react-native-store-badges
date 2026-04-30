@@ -145,7 +145,7 @@ const getScales = (
 const getUri = (platform: PlatformType, locale: Locale) => {
   const uri =
     platform === "ios"
-      ? `https://raw.githubusercontent.com/usekeyhole/react-native-store-badges/refs/heads/feature/host-app-store/img/app-store/${locale.country.toLowerCase()}.svg`
+      ? `https://raw.githubusercontent.com/usekeyhole/react-native-store-badges/refs/heads/main/img/app-store/${locale.country.toLowerCase()}.svg`
       : `https://play.google.com/intl/en-US/badges/static/images/badges/${locale.language}_badge_web_generic.png`;
 
   return uri;
