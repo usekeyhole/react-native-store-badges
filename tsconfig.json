@@ -2,8 +2,11 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "lib": ["dom", "esnext"],
-    "moduleResolution": "node",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "moduleResolution": "bundler",
     "jsx": "react-native",
     "esModuleInterop": true,
     "resolveJsonModule": true,
@@ -18,8 +21,14 @@
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "noStrictGenericChecks": false,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "rootDir": "./src"
   },
-  "include": ["src"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "example"
+  ]
 }
