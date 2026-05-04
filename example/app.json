@@ -5,13 +5,10 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "scheme": "example",
-    "newArchEnabled": true,
     "ios": {
       "supportsTablet": true
     },
-    "android": {
-      "edgeToEdgeEnabled": true
-    },
+    "android": {},
     "web": {
       "output": "static"
     },
